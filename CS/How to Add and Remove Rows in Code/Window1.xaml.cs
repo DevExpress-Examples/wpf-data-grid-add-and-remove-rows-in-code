@@ -1,4 +1,3 @@
-﻿using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Grid;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -17,10 +16,8 @@ namespace HowToAddAndRemoveRowsInCode {
             grid.SetCellValue(newRowHandle, "CompanyName", "New Company");
             grid.SetCellValue(newRowHandle, "Discontinued", false);
         }
-        void deleteRow(object sender, ItemClickEventArgs e) {
-            GridCellMenuInfo menuInfo = view.GridMenu.MenuInfo as GridCellMenuInfo;
-            if (menuInfo != null && menuInfo.Row != null)
-                view.DeleteRow(menuInfo.Row.RowHandle.Value);
+        void deleteRow(object sender, RoutedEventArgs e) {
+            view.DeleteRow(view.FocusedRowHandle);
         }
     }
 
