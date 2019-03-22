@@ -14,12 +14,15 @@
             <dxg:GridControl.View>
                 <dxg:TableView x:Name="view" AutoWidth="True">
                     <dxg:TableView.RowCellMenuCustomizations>
-                        <dxb:BarButtonItem Name="deleteRowItem" Content="Delete" ItemClick="deleteRow" />
+                        <dxb:BarButtonItem Name="deleteRowItem" Content="Delete" Command="{x:Static dxg:GridCommands.DeleteFocusedRow}" />
                     </dxg:TableView.RowCellMenuCustomizations>
                 </dxg:TableView>
             </dxg:GridControl.View>
         </dxg:GridControl>
 
-        <Button Grid.Column="1" Click="addNewRow" Width="150" Height="50">Add a New Row</Button>
+        <StackPanel Grid.Column="1">
+            <Button Click="addNewRow" Width="160" Height="50" Margin="10">Add a New Row</Button>
+            <Button Click="deleteRow" Width="160" Height="50" Margin="10">Delete the Focused Row</Button>
+        </StackPanel>
     </Grid>
 </Window>
