@@ -1,8 +1,6 @@
 ﻿using DevExpress.Mvvm;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace AddRemoveRows {
     public class Person {
@@ -20,7 +18,7 @@ namespace AddRemoveRows {
         }
     }
     public class MainViewModel : ViewModelBase {
-        public static ObservableCollection<Person> Persons { get; private set; }
+        public ObservableCollection<Person> Persons { get; private set; }
         public MainViewModel() {
             Persons = new ObservableCollection<Person>(GetSource());
         }
