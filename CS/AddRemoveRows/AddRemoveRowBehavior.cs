@@ -6,10 +6,10 @@ using System.Windows.Input;
 
 namespace AddRemoveRows {
     public class AddRemoveRowBehavior : Behavior<TableView> {
-        static DependencyPropertyKey AddCommandPropertyKey;
-        static DependencyPropertyKey DeleteCommandPropertyKey;
-        public static DependencyProperty AddCommandProperty;
-        public static DependencyProperty DeleteCommandProperty;
+        static readonly DependencyPropertyKey AddCommandPropertyKey;
+        static readonly DependencyPropertyKey DeleteCommandPropertyKey;
+        public static readonly DependencyProperty AddCommandProperty;
+        public static readonly DependencyProperty DeleteCommandProperty;
         static AddRemoveRowBehavior() {
             AddCommandPropertyKey = DependencyProperty.RegisterReadOnly(nameof(AddCommand), typeof(ICommand), typeof(AddRemoveRowBehavior), new PropertyMetadata(null));
             AddCommandProperty = AddCommandPropertyKey.DependencyProperty;
