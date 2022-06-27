@@ -11,8 +11,8 @@ This example demonstrates how to define an **AddRemoveRowBehavior** that allows 
 
 ## Files to Look At
 
-* [MainWindow.xaml](./CS/AddRemoveRows/MainWindow.xaml)
-* [AddRemoveRowBehavior.cs](./CS/AddRemoveRows/AddRemoveRowBehavior.cs)
+* [MainWindow.xaml](./CS/AddRemoveRows/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/AddRemoveRows/MainWindow.xaml))
+* [AddRemoveRowBehavior.cs](./CS/AddRemoveRows/AddRemoveRowBehavior.cs) (VB: [AddRemoveRowBehavior.vb](./VB/AddRemoveRows/AddRemoveRowBehavior.vb))
 
 ## Documentation
 
