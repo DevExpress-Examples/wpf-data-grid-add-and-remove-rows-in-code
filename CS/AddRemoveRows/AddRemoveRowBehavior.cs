@@ -1,6 +1,7 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.UI.Interactivity;
 using DevExpress.Xpf.Grid;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 
@@ -33,21 +34,23 @@ namespace AddRemoveRows {
 
         protected override void OnAttached() {
             base.OnAttached();
-            AssociatedObject.InitNewRow += OnInitNewRow;
+            AssociatedObject.AddingNewRow += OnAddingNewRow;
         }
         protected override void OnDetaching() {
-            AssociatedObject.InitNewRow -= OnInitNewRow;
+            AssociatedObject.AddingNewRow -= OnAddingNewRow;
             base.OnDetaching();
         }
 
         void AddNewRow() {
             AssociatedObject.AddNewRow();
         }
-        void OnInitNewRow(object sender, InitNewRowEventArgs e) {
-            AssociatedObject.Grid.SetCellValue(GridControl.NewItemRowHandle, AssociatedObject.Grid.Columns["ProductName"], "New Product");
-            AssociatedObject.Grid.SetCellValue(GridControl.NewItemRowHandle, AssociatedObject.Grid.Columns["UnitPrice"], 10);
-            AssociatedObject.Grid.SetCellValue(GridControl.NewItemRowHandle, AssociatedObject.Grid.Columns["CompanyName"], "New Company");
-            AssociatedObject.Grid.SetCellValue(GridControl.NewItemRowHandle, AssociatedObject.Grid.Columns["Discontinued"], false);
+        void OnAddingNewRow(object sender, AddingNewEventArgs e) {
+            e.NewObject = new Product() {
+                ProductName = "New Product",
+                CompanyName = "New Company",
+                UnitPrice = 10,
+                Discontinued = false
+            };
         }
         void DeleteRow() {
             AssociatedObject.DeleteRow(AssociatedObject.FocusedRowHandle);

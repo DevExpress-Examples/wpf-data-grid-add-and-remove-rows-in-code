@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace AddRemoveRows {
-    public class Person {
+    public class Product {
         public string ProductName { get; set; }
         public string CompanyName { get; set; }
         public int UnitPrice { get; set; }
         public bool Discontinued { get; set; }
 
-        public Person() { }
-        public Person(int i) {
+        public Product() { }
+        public Product(int i) {
             ProductName = "ProductName" + i;
             CompanyName = "CompanyName" + i;
             UnitPrice = i;
@@ -18,13 +18,13 @@ namespace AddRemoveRows {
         }
     }
     public class MainViewModel : ViewModelBase {
-        public ObservableCollection<Person> Persons { get; private set; }
+        public ObservableCollection<Product> Products { get; private set; }
         public MainViewModel() {
-            Persons = new ObservableCollection<Person>(GetSource());
+            Products = new ObservableCollection<Product>(GetSource());
         }
-        static IEnumerable<Person> GetSource() {
+        static IEnumerable<Product> GetSource() {
             for(int i = 0; i < 9; i++) {
-                yield return new Person(i);
+                yield return new Product(i);
             }
         }
     }

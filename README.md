@@ -5,11 +5,11 @@
 <!-- default badges end -->
 # WPF Data Grid - Add and Remove Rows in Code
 
-This example demonstrates how to define an **AddRemoveRowBehavior** that allows you to add and remove rows from the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl). The behavior uses the [TableView.AddNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.TableView.AddNewRow(System.Boolean)) and [GridViewBase.DeleteRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridViewBase.DeleteRow(System.Int32)) methods to add and remove rows, and the [TableView.InitNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.TableView.InitNewRow) event to populate the added row with default values.
+This example demonstrates how to define an **AddRemoveRowBehavior** that allows you to add and remove rows from the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl). The behavior uses the [TableView.AddNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.TableView.AddNewRow(System.Boolean)) and [GridViewBase.DeleteRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridViewBase.DeleteRow(System.Int32)) methods to add and remove rows, and the [GridViewBase.AddingNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridViewBase.AddingNewRow) event to populate the added row with default values.
 
 ![image](https://user-images.githubusercontent.com/65009440/175929544-6fc4e5c4-3225-4a42-8f77-4eca17dc9e00.png)
 
-## Files to Look At
+## Files to Review
 
 * [MainWindow.xaml](./CS/AddRemoveRows/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/AddRemoveRows/MainWindow.xaml))
 * [AddRemoveRowBehavior.cs](./CS/AddRemoveRows/AddRemoveRowBehavior.cs) (VB: [AddRemoveRowBehavior.vb](./VB/AddRemoveRows/AddRemoveRowBehavior.vb))
@@ -19,7 +19,7 @@ This example demonstrates how to define an **AddRemoveRowBehavior** that allows 
 * [Add and Remove Rows](https://docs.devexpress.com/WPF/6123/controls-and-libraries/data-grid/data-editing-and-validation/add-and-remove-rows)
 * [TableView.AddNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.TableView.AddNewRow(System.Boolean))
 * [GridViewBase.DeleteRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridViewBase.DeleteRow(System.Int32))
-* [TableView.InitNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.TableView.InitNewRow)
+* [GridViewBase.AddingNewRow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridViewBase.AddingNewRow)
 
 ## More Examples
 
