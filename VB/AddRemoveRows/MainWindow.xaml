@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
         <dxg:GridControl AutoGenerateColumns="AddNew"
-                         ItemsSource="{Binding Persons}">
+                         ItemsSource="{Binding Products}">
             <dxg:GridControl.View>
                 <dxg:TableView AutoWidth="True">
                     <dxg:TableView.RowCellMenuCustomizations>

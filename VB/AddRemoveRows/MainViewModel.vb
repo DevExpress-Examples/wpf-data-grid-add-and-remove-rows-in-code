@@ -4,7 +4,7 @@ Imports System.Collections.ObjectModel
 
 Namespace AddRemoveRows
 
-    Public Class Person
+    Public Class Product
 
         Public Property ProductName As String
 
@@ -28,25 +28,25 @@ Namespace AddRemoveRows
     Public Class MainViewModel
         Inherits ViewModelBase
 
-        Private _Persons As ObservableCollection(Of AddRemoveRows.Person)
+        Private _Products As ObservableCollection(Of AddRemoveRows.Product)
 
-        Public Property Persons As ObservableCollection(Of Person)
+        Public Property Products As ObservableCollection(Of Product)
             Get
-                Return _Persons
+                Return _Products
             End Get
 
-            Private Set(ByVal value As ObservableCollection(Of Person))
-                _Persons = value
+            Private Set(ByVal value As ObservableCollection(Of Product))
+                _Products = value
             End Set
         End Property
 
         Public Sub New()
-            Persons = New ObservableCollection(Of Person)(GetSource())
+            Products = New ObservableCollection(Of Product)(GetSource())
         End Sub
 
-        Private Shared Iterator Function GetSource() As IEnumerable(Of Person)
+        Private Shared Iterator Function GetSource() As IEnumerable(Of Product)
             For i As Integer = 0 To 9 - 1
-                Yield New Person(i)
+                Yield New Product(i)
             Next
         End Function
     End Class

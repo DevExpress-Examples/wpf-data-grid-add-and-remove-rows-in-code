@@ -1,6 +1,7 @@
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.UI.Interactivity
 Imports DevExpress.Xpf.Grid
+Imports System.ComponentModel
 Imports System.Windows
 Imports System.Windows.Input
 
@@ -51,11 +52,11 @@ Namespace AddRemoveRows
 
         Protected Overrides Sub OnAttached()
             MyBase.OnAttached()
-            AddHandler AssociatedObject.InitNewRow, AddressOf OnInitNewRow
+            AddHandler AssociatedObject.AddingNewRow, AddressOf OnAddingNewRow
         End Sub
 
         Protected Overrides Sub OnDetaching()
-            RemoveHandler AssociatedObject.InitNewRow, AddressOf OnInitNewRow
+            RemoveHandler AssociatedObject.AddingNewRow, AddressOf OnAddingNewRow
             MyBase.OnDetaching()
         End Sub
 
@@ -63,11 +64,8 @@ Namespace AddRemoveRows
             AssociatedObject.AddNewRow()
         End Sub
 
-        Private Sub OnInitNewRow(ByVal sender As Object, ByVal e As InitNewRowEventArgs)
-            AssociatedObject.Grid.SetCellValue(DataControlBase.NewItemRowHandle, AssociatedObject.Grid.Columns("ProductName"), "New Product")
-            AssociatedObject.Grid.SetCellValue(DataControlBase.NewItemRowHandle, AssociatedObject.Grid.Columns("UnitPrice"), 10)
-            AssociatedObject.Grid.SetCellValue(DataControlBase.NewItemRowHandle, AssociatedObject.Grid.Columns("CompanyName"), "New Company")
-            AssociatedObject.Grid.SetCellValue(DataControlBase.NewItemRowHandle, AssociatedObject.Grid.Columns("Discontinued"), False)
+        Private Sub OnAddingNewRow(ByVal sender As Object, ByVal e As AddingNewEventArgs)
+            e.NewObject = New Product() With {.ProductName = "New Product", .CompanyName = "New Company", .UnitPrice = 10, .Discontinued = False}
         End Sub
 
         Private Sub DeleteRow()
